@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+
+:root {
+    --default-ff: "Outfit", sans-serif;
+    --secondary-ff: "Young Serif", serif;
+
+    --h1: clamp(2.25rem, 1.795rem + 1.136vw, 2.5rem);
+    --h2: 1.75rem;
+    --callout: 1.25rem;
+    --text-body: 1rem;
+
+    --white: hsl(0, 0%, 100%);
+    --rose-white: hsl(330, 100%, 98%);
+    --eggshell: hsl(30, 54%, 90%);
+    --light-grey: hsl(30, 18%, 87%);
+    --wenge-brown: hsl(30, 10%, 34%);
+    --dark-charcoal: hsl(24, 5%, 18%);
+    --nutmeg: hsl(14, 45%, 36%);
+    --dark-raspberry: hsl(332, 51%, 32%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--default-ff);
+    font-size: var(--text-body);
+    line-height: 1.5;
+    color: var(--wenge-brown);
+    background-color: var(--eggshell);
+}
+
+h1,
+h2 {
+    font-family: var(--secondary-ff);
+    line-height: 1;
+}
+
+h2 {
+    color: var(--nutmeg);
+}
+
+img {
+    max-width: 100%;
+}
+
+ul,
+ol {
+    margin-left: 2.5rem;
+    list-style-type: none;
+}
+
+.callout__list,
+.ingredients__list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.callout__item,
+.ingredients__item,
+.instructions__item {
+    position: relative;
+}
+
+.callout__item::before,
+.ingredients__item::before,
+.instructions__item::before {
+    position: absolute;
+}
+
+.callout__item::before,
+.ingredients__item::before {
+    --dim: 0.25rem;
+    content: "";
+    top: 50%;
+    left: -1.75rem;
+    transform: translateX(-50%);
+    display: block;
+    width: var(--dim);
+    height: var(--dim);
+    border-radius: 999rem;
+}
+
+td:last-child {
+    font-weight: 600;
+    color: var(--nutmeg);
+}
+
+strong {
+    letter-spacing: 0.01em;
+}
+
+.divider {
+    display: block;
+    margin-block: 2rem;
+    height: 1px;
+    background-color: var(--light-grey);
+}
+
+.recipe {
+    background-color: var(--white);
+    border-radius: 1.5625rem;
+}
+
+.content-container {
+    padding-block: 2.5rem;
+    padding-inline: 2rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    margin-bottom: 1.5rem;
+    color: var(--dark-charcoal);
+}
+
+.callout {
+    margin-bottom: 1.625rem;
+    padding-inline: 1.5rem;
+    padding-block: 1.375rem 1.5rem;
+    background-color: var(--rose-white);
+    border-radius: 0.75rem;
+}
+
+.callout__heading {
+    margin-bottom: 0.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--dark-raspberry);
+}
+
+.callout__list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.callout__item::before {
+    background-color: var(--dark-raspberry);
+}
+
+.ingredients h2 {
+    margin-bottom: 1.125rem;
+}
+
+.ingredients__item::before {
+    background-color: var(--wenge-brown);
+}
+
+.instructions h2 {
+    margin-bottom: 1.5rem;
+}
+
+.instructions__list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.instructions__item {
+    counter-increment: num;
+}
+
+.instructions__item::before {
+    content: counter(num) ".";
+    left: -2rem;
+    font-weight: 600;
+    color: var(--nutmeg);
+}
+
+.nutrition p {
+    margin-block: 1.5rem;
+}
+
+.nutrition__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nutrition__table tr:not(:last-child) {
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.nutrition__table tr:not(:first-child) td {
+    padding-top: 0.75rem;
+}
+
+.nutrition__table tr:not(:last-child) td {
+    padding-bottom: 0.75rem;
+}
+
+.footer {
+    padding-block: 0.5rem;
+}
